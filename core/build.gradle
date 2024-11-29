@@ -1,0 +1,28 @@
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+sourceSets {
+  main.java.srcDirs = [ "src/main/java" ]
+  test.java.srcDirs = [ "src/test/java" ]
+}
+
+dependencies {
+  api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  testImplementation 'junit:junit:4.13.2'
+  testImplementation "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
+  testImplementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+  testImplementation "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+  testImplementation 'org.mockito:mockito-core:3.12.4'
+  testImplementation "org.mockito:mockito-core:5.8.0"  // Latest stable version
+  testImplementation "net.bytebuddy:byte-buddy:1.14.11" // Required by Mockito
+  testImplementation "org.objenesis:objenesis:3.3"
+  if(enableGraalNative == 'true') {
+    implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+  }
+}
+
+
+test {
+  useJUnit()
+}
