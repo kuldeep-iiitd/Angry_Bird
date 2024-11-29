@@ -8,6 +8,8 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
+
+// this is the screen which supports menu, here you can choose random level, or map or can go back to the loading screen
 public class MenuScreen extends ScreenAdapter
 {
     AngryBirdGame game;
@@ -28,6 +30,7 @@ public class MenuScreen extends ScreenAdapter
     @Override
     public void show()
     {
+        //taking images
         MenuBackground = new Texture("Menu_Background.png");
         Logo = new Texture("Game_Icon_Menu.png");
         Map = new Texture("Map_Icon_Menu.png");
@@ -44,6 +47,7 @@ public class MenuScreen extends ScreenAdapter
 
     private void input()
     {
+        //to check where it is touched
         if(Gdx.input.isTouched())
         {
             Vector3 touchPos = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
@@ -90,6 +94,7 @@ public class MenuScreen extends ScreenAdapter
         float worldWidth = viewport.getWorldWidth();
         float worldHeight = viewport.getWorldHeight();
 
+        //drawing images , buttons on screen
         game.batch.draw(MenuBackground, 0, 0, worldWidth, worldHeight);
         game.batch.draw(Logo, 14, 13, 16, 8);
         game.batch.draw(Map, 20, 9, 10, 4);

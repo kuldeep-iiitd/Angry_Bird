@@ -8,6 +8,9 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
+//pause screen , it opens when called in between a game
+//from here yu can either go back to menu
+//or u can resume to the game where you left
 public class PauseScreen extends ScreenAdapter
 {
     AngryBirdGame game;

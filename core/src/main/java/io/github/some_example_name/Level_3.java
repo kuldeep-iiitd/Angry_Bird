@@ -54,8 +54,14 @@ public class Level_3 extends ScreenAdapter {
         this.state= state;
     }
 
+    public void print(String string)
+    {
+        System.out.println(string);
+    }
+
     public void loadState(String filePath)
     {
+        print("game is loaded");
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath)))
         {
 
@@ -176,7 +182,7 @@ public class Level_3 extends ScreenAdapter {
         backgroundMusic.setLooping(true);
         backgroundMusic.setVolume(0.5f);
         backgroundMusic.play();
-
+        print("game is started");
         initialBirdPosition = new Vector2(DANDA_X, DANDA_Y);
     }
 
@@ -400,6 +406,7 @@ public class Level_3 extends ScreenAdapter {
 
         private void cleanupDestroyedObjects ()
         {
+            print("asdfasdf");
             Iterator<Building_blocks> blockIterator = blocks.iterator();
             while (blockIterator.hasNext()) {
                 Building_blocks block = blockIterator.next();
@@ -458,7 +465,9 @@ public class Level_3 extends ScreenAdapter {
             }
         }
 
-        public void input () throws IOException {
+        public void input () throws IOException
+        {
+            saveGameStateToFile();
             if (birdusing == null || birdLaunched) return;
 
             if (Gdx.input.isTouched()) {

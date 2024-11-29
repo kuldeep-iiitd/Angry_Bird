@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+//this is the extra functionality of random level
 public class random_level extends ScreenAdapter
 {
     World world;
@@ -54,6 +55,11 @@ public class random_level extends ScreenAdapter
     {
         this.game = game;
         this.state = state;
+    }
+
+    public void print(String string)
+    {
+        System.out.println(string);
     }
 
     public void loadState(String filePath)
@@ -212,7 +218,7 @@ public class random_level extends ScreenAdapter
 
         rightWallBody.createFixture(rightWallFixtureDef);
         rightWallBody.setType(BodyDef.BodyType.StaticBody);
-
+        print("wall is created");
         rightWallShape.dispose();
     }
 
@@ -397,6 +403,7 @@ public class random_level extends ScreenAdapter
 
     private void handleCollision(Object userData)
     {
+        print("collision detected");
         if (userData instanceof Building_blocks)
         {
             Building_blocks block = (Building_blocks) userData;
@@ -439,6 +446,7 @@ public class random_level extends ScreenAdapter
 
     public void building_hatha_bhai()
     {
+        print("building is created");
         Iterator<Building_blocks> blockIterator = blocks.iterator();
         while (blockIterator.hasNext())
         {
@@ -453,6 +461,7 @@ public class random_level extends ScreenAdapter
 
     public  void  chidiya_tmkc()
     {
+        print("Chdidyan ban gyi");
         Iterator<Pig> pigIterator = pigs.iterator();
         while (pigIterator.hasNext())
         {
@@ -520,6 +529,7 @@ public class random_level extends ScreenAdapter
 
     public void input() throws IOException
     {
+        saveGameStateToFile();
         if(birdusing == null || birdLaunched) return;
 
         if(Gdx.input.isTouched())
@@ -611,7 +621,7 @@ public class random_level extends ScreenAdapter
 
     private void saveGameStateToFile() throws IOException
     {
-
+        print("file is saved into game");
         String fileName = "randomlevel_savestate.txt";
 
         try (FileWriter writer = new FileWriter(fileName, false))

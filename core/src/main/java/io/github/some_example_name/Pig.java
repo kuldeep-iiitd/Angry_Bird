@@ -18,6 +18,7 @@ public class Pig
     public Texture texture;
 
 
+    //pig class , contains all data related to pigs
 
     public Pig(World world, float x, float y, float width, float height, String texturePath){
         this.width = width;
@@ -68,6 +69,7 @@ public class Pig
         chiii();
     }
 
+    //to check destroyed and and is alive place at correct position
     public void chiii()
     {
         if (!isDestroyed) {
@@ -79,6 +81,7 @@ public class Pig
         }
     }
 
+    //health points are reduced on collsion
     public void handleCollision(){
         healthPoints--;
         if (healthPoints <= 0) {
@@ -102,6 +105,7 @@ public class Pig
         return sprite;
     }
 
+    //to check whether boundaries of world
     public void checkOutOfBounds()
     {
         Vector2 position = body.getPosition();

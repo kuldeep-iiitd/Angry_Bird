@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.math.Vector2;
 
+//this is the building block class, blocks like wood,rock,glass are present in this class
 public class Building_blocks
 {
     private Texture texture;
@@ -53,6 +54,7 @@ public class Building_blocks
         shape.dispose();
     }
 
+    
     public int getHealth()
     {
         return this.healthPoints;
@@ -84,6 +86,7 @@ public class Building_blocks
         jinda(batch);
     }
 
+    //check alive and change the position
     public void jinda(SpriteBatch batch)
     {
         if (!isDestroyed)

@@ -10,6 +10,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 
+//this is loading screen , first screen that appears
+//pressing space bar here continues to next screen
 public class LoadingScreen extends ScreenAdapter
 {
     AngryBirdGame game;
@@ -42,7 +44,7 @@ public class LoadingScreen extends ScreenAdapter
         });
 
     }
-
+    
     public void resize(int width, int height)
     {
         viewport.update(width, height, true);
@@ -58,6 +60,7 @@ public class LoadingScreen extends ScreenAdapter
 
     }
 
+    
     @Override
     public void render(float delta)
     {

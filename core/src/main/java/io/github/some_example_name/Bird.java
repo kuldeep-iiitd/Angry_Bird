@@ -3,6 +3,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.*;
 
+// this is the bird class , contains all data related to birds
 public class Bird
 {
     protected Body body;
@@ -73,6 +74,7 @@ public class Bird
         body.setType(bodyType);
     }
 
+    //this is used to update the poosition of sprite along wit the position of body
     public void updateSpritePosition()
     {
         float x = body.getPosition().x * PPM;

@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
+//this screen is called when you loose some level
+//contains a game over image which displays for some time then you are thrown back to the menu
 public class loosescreen extends ScreenAdapter {
     AngryBirdGame game;
     private SpriteBatch batch;

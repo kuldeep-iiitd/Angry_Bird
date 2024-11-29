@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
+// this is the catapult class, means the slingshot, just to draw
 public class Catapult
 {
     private Texture texture;

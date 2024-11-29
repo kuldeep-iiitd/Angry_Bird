@@ -55,8 +55,14 @@ public class Level_2 extends ScreenAdapter
         this.state = state;
     }
 
+    public void print(String string)
+    {
+        System.out.println(string);
+    }
+
     public void loadState(String filePath)
     {
+        print("game is loaded");
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath)))
         {
 
@@ -178,7 +184,7 @@ public class Level_2 extends ScreenAdapter
         backgroundMusic.setLooping(true);
         backgroundMusic.setVolume(0.5f);
         backgroundMusic.play();
-
+        print("game is started");
         initialBirdPosition = new Vector2(DANDA_X, DANDA_Y);
     }
 
@@ -282,7 +288,7 @@ public class Level_2 extends ScreenAdapter
         drawBirds();
         drawButton();
         game.batch.end();
-
+        print("kuch bhi");
         cleanupDestroyedObjects();
         birdgyibahar();
         if(pigs.isEmpty())
@@ -485,6 +491,7 @@ public class Level_2 extends ScreenAdapter
 
     public void input() throws IOException
     {
+        saveGameStateToFile();
         if (birdusing == null || birdLaunched) return;
 
         if (Gdx.input.isTouched())
